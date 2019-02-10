@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html class="style-webpage">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>btcXwallet</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="files/img/favicon.ico" sizes="16x16" type="image/png">
+    <link rel="stylesheet" type="text/css" media="print,screen" href="files/css/custom.css" />
+    <link rel="stylesheet" type="text/css" media="print,screen" href="files/css/w3.css" />
+    <link rel="stylesheet" type="text/css" media="print,screen" href="files/css/simple-grid.min.css" />
+    <script src="files/js/custom.js" async defer></script>
+    <script src="files/js/qrcode.min.js" async defer></script>
+    <script src="files/js/buidl.js" async defer></script>
+</head>
+<body>
+    <!-- Navbar  -->
+    <div class="w3-sidebar w3-bar-block w3-card w3-animate-left" style="display:none" id="leftMenu">
+            <button onclick="closeLeftMenu()" class="w3-bar-item w3-button w3-large">Close &times;</button>
+            <a href="javascript:void(0)" class="w3-bar-item w3-button" class="disabled">Single Wallet</a>
+            <a href="javascript:void(0)" class="w3-bar-item w3-button" class="disabled">Bulk Wallet</a>
+            <a href="javascript:void(0)" class="w3-bar-item w3-button" class="disabled">Vanity Wallet</a>
+            <a href="javascript:void(0)" class="w3-bar-item w3-button" class="disabled">Split Wallet</a>
+            <a href="#show-brain-wallet" class="w3-bar-item w3-button">Brain Wallet</a>
+    </div>
+          <div class="w3-black">
+           <div class="w3-container">
+               <button class="w3-button w3-black w3-xlarge w3-left" onclick="openLeftMenu()" 
+               style="margin-top:10px;margin-left:-5px;">&#9776;</button>
+             <h4 style="color:#FFFFFF;margin-top:24px;">btcXwallet</h4>
+            </div>
+          </div>
+    <!-- Enter Passphrase -->
+    <div class="passphrase-style">
+        <label id="passphrase1">
+            <span>Enter your passphrase </span><br>
+            <input type="password" name="passphrase1" id="passContent1" required/>  
+        </label>
+        <br>
+        
+        <label id="passphrase2">
+                <span>Confirm your passphrase </span><br>
+            <input type="password" name="passphrase2" id="passContent2" required/>     
+        </label>
+
+        <button class="customButton" onclick="generateWallet()">Generate Wallet</button> <br/><br/>
+        <label class="pure-material-checkbox" onchange="togglePassphrase()">
+            <input type="checkbox">
+            <span>Show Passphrase?</span>
+          </label>
+        <div class="warning-style">
+            <p><b>Warning: </b>Ensure you choose a strong passphrase to prevent bruteforce attacks.</p>
+        </div>
+    </div>
+
+    <!-- Paper Wallet -->
+        <div id="show-brain-wallet">
+            <div class="show-address-details">
+                <!-- Show-SHARE -->
+                <div id="public-address"><h4><b>BITCOIN ADDRESS</b></h4></div> 
+                <!-- QR Code -->
+                <div id="qrcode-address"> </div>
+                <!-- Public Address -->
+                <div id="text-address">
+                    <span id="display-address"></span>
+                </div>
+            </div><br/>
+            <div class="fold-here"></div>
+            <div class="show-private-key">
+                <!-- Show SECRET -->
+                <div id="private-key"><h4><b>PRIVATE KEY</b></h4></div> 
+                <!-- QR Code -->
+                <div id="qrcode-private-key"> </div>
+                <!-- Private Key -->
+                <div id="text-private-key">
+                    <span id="display-private-key"></span>
+                    <br/><br/>
+                    <h6 style="text-align: right;visibility: hidden;" id="generator-name"><i>Generated using btcxwallet.cf</i></h6>
+                </div><br/>
+            </div>
+        </div>
+    <div  style="margin-top: 5px;padding-left:30px;">
+            <button class="customButton print-button" id="print-btn" >PRINT</button>
+    </div>
+
+    <!-- Footer Section -->
+
+    <div class="footer">
+        <div class="left-side-footer">
+            <h5><b>Donation (BTC): </b><a href="bitcoin:15URbpw8zfhw3ewmBLCRUs4UHnYFymC9Fi">15URbpw8zfhw3ewmBLCRUs4UHnYFymC9Fi</a></h5>
+
+            <!-- <div class="right-side-footer">
+                    <h5>Source Code on <b><a href="" target="_blank">Github</a></b>♥ soon</h5>
+            </div> -->
+        </div>
+        
+    </div>
+
+</body>
+</html>
